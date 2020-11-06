@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Linea del tiempo </title>
+	  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+	<link rel="stylesheet" type="text/css" href="css/Style.css">
+</head>
+<header>
+  <div class="contenedor">
+    <h1 id="logo"><img src="img/logTo.png"  width="150" height="150"></h1>
+    <nav class="menu">
+      
+      
+      <ul>
+        <li>
+          <a href=""><i class="fa fa-sliders" aria-hidden="true"></i>
+          </a>
+          <ul class="subMenu">
+            <li>
+             
+              <a href="index.html" onclick="CerrarSession()">desconectar</a>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</header>
+
+<body>
+	<div class="structure" ng-app="app" ng-controller="HomeController">
+		<div class="preloaderimg">
+			<img src="img/capilla.jpg"  alt="" style="display: none;">
+		</div>		
+
+		<div class="timeline"></div>
+		<div class="timeline">  
+   <div ng-repeat="date in dates track by $index" class="date date-{{$index}}">
+  
+    <div class="goal_wrap goal_real_estate" ng-show="goal_real_estate_{{$index}}">      	
+      <a href="" onclick="EdadAntigua()" target="_blank"> <i class="fa fa-book" aria-hidden="true" ></i>  </a>    
+     </div>
+    
+     <div class="goal_wrap goal_real_estate2" ng-show="goal_involve_{{$index}}">      	
+      <a href="" ><i class="fa fa-lightbulb-o " aria-hidden="true" ></i>   </a>   
+    </div>
+
+    
+    <div class="goal_wrap goal_real_estate3" ng-show="goal_retirement_{{$index}}">      	
+      <a href="" onclick="EdadMedia()"><i class="fa fa-coffee" aria-hidden="true" ></i>   </a>   
+    </div>
+
+    <div class="goal_wrap goal_real_estate4" ng-show="goal_retirement2_{{$index}}">      	
+      <a href="" onclick="EdadModerna()"><i class="fa fa-coffee" aria-hidden="true" ></i>   </a>   
+    </div>
+    <div class="goal_wrap goal_real_estate5" ng-show="goal_retirement3_{{$index}}">      	
+      <a href="" onclick="EdadContenporanea()"><i class="fa fa-coffee" aria-hidden="true" ></i>   </a>   
+    </div>
+     
+
+   
+
+
+
+    <p class="focus">
+      <a href="#">{{date}} </a>
+    </p>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>{{goal_title}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+	</div>
+<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" ><i class="fa fa-times"></i></a>
+				<h3>Hola!! soy tomy</h3>
+				<h4>y Este es mi maquina del tiempo ,quiero explicarte como funnciona todo</h4>
+				<form action="">
+					<div class="contenedor-inputs">
+						<img src="img/personajePrueba.png" width="300px" height="300px">
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+<div class="overlay" id="overlay2">
+      <div class="popup" id="popup2">
+        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
+        <h3>Como te llamas?</h3>
+        <h4>Amigo ,primero que todo tenemos que saber tu nombre</h4>
+        <form action="">
+          <div class="contenedor-inputs">
+            <img src="img/gifPolar.gif" width="300px" height="300px">
+            <input type="text" name="nickname" id="nickname" placeholder="nickname">
+            <input type="text" name="enviar" value="enviar" class="btn-submit" onclick="CambiarNickName1()">
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/popupsLine.js"></script>
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <script type="text/javascript" src="js/onclickFuction.js"></script>
+</body>
+</html>

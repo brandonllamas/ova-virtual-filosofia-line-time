@@ -1,0 +1,373 @@
+
+ .overlay {
+  background: rgba(0,0,0,.3);
+  position: fixed;
+  top: 0;
+  bottom: 00;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  visibility: hidden;
+}
+
+.overlay.active {
+  visibility: visible;
+}
+
+.popup {
+  background: #F8F8F8;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 60px;
+  text-align: center;
+  width: 600px;
+   border-radius: 20px;
+  transition: .3s ease all;
+  transform: scale(0.7);
+  opacity: 0;
+
+}
+
+.popup .btn-cerrar-popup {
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  text-align: right;
+  transition: .3s ease all;
+  color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+  color: #000;
+}
+
+.popup h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.popup h4 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.popup form .contenedor-inputs {
+  opacity: 0;
+}
+
+.popup form .contenedor-inputs input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 52px;
+  font-size: 18px;
+  line-height: 52px;
+  text-align: center;
+  border: 1px solid #BBBBBB;
+}
+
+.popup form .btn-submit {
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  color: #fff;
+  background: #5E7DE3;
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover {
+  background: rgba(94,125,227, .9);
+}
+
+.popup form .btn-siguiente-popup {
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  color: #fff;
+  background: #5E7DE3;
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+.popup form .btn-siguiente-popup:hover {
+  background: rgba(94,125,227, .9);
+}
+
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active { transform: scale(1); opacity: 1; }
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; opacity: 1;}
+.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards;opacity: 1; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; opacity: 1;}
+/*
+menu
+*/
+/* estilos generales */
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+
+}
+/*-----------------------*/
+/* El body tendra el estilo de letra open sans y si no lo encuentra sera sans-serif*/
+body{
+	font-family: 'open Sans',sans-serif;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+/*Clase contenedor sera aquel el que tenga todo*/
+.contenedor{
+	/*ocupara el 100% de la pagina*/
+	width: 100%;
+	/*tendra una altura minima de 100vh*/
+	min-height: 100vh;
+	margin: 0 auto;
+	/*utilizare un display grid*/
+	display: grid;
+	/*aqui le dire que utulizare dos columnas una 
+	de 90px y la otra que tome el tamano auto*/
+		grid-template-columns: minmax(90px, 90px) auto;
+	/*Le diremos que tenga dos filas una de 60px 
+	y la otra que ocupe el resto*/
+	grid-template-rows: 60px auto;
+	/*le diremos que el header ocupe las dos columnas 
+	tambien le diremos que el menu y contenido
+	ocupe una*/
+	grid-template-areas: "header header"
+						  "contenido contenido";
+	/*Una transicion para todos los elementos 
+	de 3 segundos y que sea facil*/
+	transition: all .3s ease;
+}
+/*Cuando el contenedor este activo va a mostrar la barra*/
+.contenedor.active{
+grid-template-columns: minmax(300px, 18%) auto;
+}
+
+/*----------------header-----------------*/
+.header{
+	/*Aqui decimos que este adopte el id header*/
+	grid-area: header;
+	padding: 0 20px;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	justify-content: space-between;
+	grid-gap: 20px;
+	grid-template-areas:"logo busqueda iconos";
+}
+.header .contenedor-logo{
+	grid-area: logo;
+	display: flex;
+	align-items: center;
+}
+.header .contenedor-logo .boton-menu{
+	border: none;
+	padding: 10px;
+	background: none;
+	cursor: pointer;
+	font-size: 18px
+	border-radius:100px;
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+}
+.header .contenedor-logo .boton-menu:hover{
+	background: #e7e7e7;
+}
+.header .contenedor-logo .logo .fas{
+	background: blue;
+	padding: 7px 12px;
+	border-radius: 4px;
+	font-size: 8px;
+	color: #fff;
+	position: relative;
+	top: -3px;
+	margin-right: 4px;
+}
+.header .contenedor-logo .logo{
+	font-family: 'Bebas Neue', cursive;
+	font-size: 20px;
+	position: relative;
+	top: 2px;
+}
+.header .barra-busqueda{
+	grid-area: busqueda;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header .barra-busqueda input{
+ 	 min-width:  60%;
+ 	 padding: 0 15px;
+	 height: 35px;
+	 line-height: 35px;
+ 	 border: 1px solid #ccc;
+ 	 font-size: 16px;
+ 	 font-family: 'Open Sans', sans-serif;
+}
+.header .barra-busqueda button{
+	height: 35px;
+	border:1px solid #ccc;
+	border-left: none;
+	color:#545454;
+	background: #f8f8f8;
+	padding: 0 25px;
+	cursor: pointer;
+}
+.header .barra-busqueda button:hover{
+	background: #f5f5f5;
+}
+.header .botones-header{
+	grid-area: iconos;
+	display: flex;
+	align-items: center;
+}
+.header .botones-header button{
+	background: none;
+	border: none;
+	width: 40px;
+	height: 40px;
+	font-size: 18px;
+	padding: 7px 12px;
+	border-radius: 100px;
+	color: #828282;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.header .botones-header button:hover{
+	background: #e7e7e7;
+}
+.header .botones-header .avatar{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+
+}
+.header .botones-header .avatar img{
+	vertical-align: top;
+	width: 100%;
+	border-radius: 100px;
+}
+/*----------------------menu lateral----------------*/
+.menu-lateral{
+	grid-area: menu;
+	background: #fff;
+	overflow: hidden;
+}
+.menu-lateral a{
+/*como esta en block ocupara todo el espacio y se pondran como lista*/
+display: block;
+padding: 15px 35px;
+color: #000;
+min-width:  800px;
+
+}
+.menu-lateral a:hover{
+background: #e7e7e7;
+}
+.menu-lateral a.active{
+	background: #e7e7e7;
+	font-weight: bold;
+}
+.menu-lateral .fas{
+	color: #606060;
+	margin-right: 32px;
+	width: 20px;
+	text-align: center;
+}
+.menu-lateral a.active .fas{
+	color: blue;
+}
+.menu-lateral hr{
+	margin: 20px 0;
+	border: 1px solid #dfdfdf;
+}
+.main{
+	grid-area: contenido;
+	background: #f8f8f8;
+	padding: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+	.main .grid-videos {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.header .contenedor-logo .logo span {
+		display: none;
+	}
+
+	.header .barra-busqueda input {
+		min-width: 70%;
+	}
+}
+@media screen and (max-width: 992px) {
+	.main .grid-videos {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.contenedor {
+		grid-template-rows: auto;
+	}
+
+	.header {
+		padding: 20px;
+		grid-template-columns: auto auto;
+		justify-content: space-between;
+		grid-template-areas: "logo iconos"
+							 "busqueda busqueda";
+	}
+
+	.header .contenedor-logo .logo span {
+		display: inline;
+	}
+
+	.header .barra-busqueda input {
+		min-width: auto;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.main .grid-videos {
+		grid-template-columns: 1fr;
+	}
+}
+
+.tarjeta{
+		background:white;
+	margin: 40px 0;
+	border-radius: 6px;
+	overflow: block;
+	z-index: 10;
+}
+.contenedorTarjeta{
+		width: 90%;
+	max-width:700px;
+	margin:auto;
+	height: 100%;
+
+
+}

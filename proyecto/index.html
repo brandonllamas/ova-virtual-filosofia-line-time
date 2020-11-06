@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/StyleLogin.css">
+
+</head>
+
+<body id="particles-js">
+
+	
+<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
+				<h3>Hola soy Tommy!!</h3>
+				<h4>Bienvenido !!</h4>
+				<form action="">
+					<div class="contenedor-inputs">
+						<img src="img/personajePrueba.png" width="200px" height="200px">
+						<input type="button" name="Siguiente" value="Siguiente" id="btn-siguiente-popup" class="btn-siguiente-popup">
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+<div class="overlay2" id="overlay2">
+			<div class="popup2" id="popup2">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
+				<h3>Hola amigo!!</h3>
+				<h4>Ya haces parte de nuestra familia?</h4>
+				<form action="">
+					<div class="contenedor-inputs">
+						<img src="img/personajePrueba.png" width="200px" height="200px">
+						<input type="button" name="Yes" value="Si" class="btn-si-popup" id="btn-si-popup" >
+						<input type="button" name="No" value="No" id="btn-no-popup" class="btn-no-popup">
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+<div class="overlay3" id="overlay3">
+			<div class="popup3" id="popup3">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
+				<h3>Muy bien!!</h3>
+				<h4>Ingresa tu ticket para seguir navegando en el tiempo</h4>
+				<form action="">
+					<div class="contenedor-inputs">
+						<img src="img/personajePrueba.png" width="200px" height="200px"><br>
+						<button disabled="true"><img src="img/user.png"></button><input type="email" name="email"  id="email" placeholder="Ingrese su email" class="correo"><br>
+						<button disabled="true"><img src="img/key.png"></button><input type="password" name="password" id="password" placeholder="ingresa su contraseña" class="password">
+						<input type="button" name="Ingresar" value="Ingresar" class="btn-si-popup" id="btn-login-popup"  onclick="login()">
+					
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	<div class="overlay4" id="overlay4">
+			<div class="popup4" id="popup4">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
+				<h3>Que estas esperando?</h3>
+				<h4>Unete y podras obtener un ticket de viaje en el tiempo para conocer nuevas experiencias.Para eso solo debes llenar un pequeño formulario</h4>
+				<form action="">
+					<div class="contenedor-inputs">
+						<img src="img/Boleto.png" width="200px" height="200px">	<input type="button" name="Siguiente" value="Llenar formulario" id="btn-siguiente2-popup" class="btn-no-popup">
+					</div>
+					
+				</form>
+			</div>
+		</div>	
+			<div class="overlay3" id="overlay5">
+			<div class="popup3" id="popup5">
+				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fa fa-times"></i></a>
+				<h3>Formulario</h3>
+				<h4>Llena el formulario y recibiras tu ticket</h4>
+				<form action="">
+					<div class="contenedor-inputs">
+						<img src="img/Boleto.png" width="200px" height="200px"><br>
+						<button disabled="true"><img src="img/user.png"></button>
+						<input type="email" name="email2" id="email2" placeholder="Ingrese su correo"><br>
+						<button disabled="true"><img src="img/key.png"></button>
+						<input type="password" name="pasword2" id="password2" placeholder="Ingrese su contraseña">	<br>				
+						<input type="button" name="" value="Registrarse" id="Registrar" class="btn-no-popup" onclick="SigIn()">
+					</div>
+					
+				</form>
+			</div>
+		</div>	
+	</div>
+
+
+
+<div id="loader"></div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+
+<script src="js/firebase.js"></script>
+<script src="js/popup.js"></script>
+
+
+
+</body>
+</html>
